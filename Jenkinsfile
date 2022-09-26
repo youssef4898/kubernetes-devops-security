@@ -8,7 +8,7 @@ pipeline {
               archive 'target/*.jar' 
             }
 
-        } /*
+        } 
       stage('Unit tests') {
             steps {
               sh "mvn test"
@@ -21,21 +21,15 @@ pipeline {
               }
             }
         }       
-=======
+
         }   
-    
-  stage('Unit tests') {
-            steps {
-              sh "mvn test"
-               
-           
-              }
-            }
+ 
     stage( 'Docker Build and Push') {
       steps {
-      sh 'printenv' 
-      sh 'docker build -t  youssef1998/youssefrepo' 
-      sh 'docker push youssef1998/youssefrepo: madtekimage'
+      withDockerRegistry([credentialsId: "docker-hub", url: ""]) {
+          sh 'printenv'
+         sh 'sudo docker build -t youssef1998/madtek-app:""$GIT_COMMIT"" .'
+         sh 'docker push youssef1998/madtek-app:""$GIT_COMMIT""'
       }
 >>>>>>> e003f5045f91d06aa6aaa602a4da8b7d81cc3245
     }*/
