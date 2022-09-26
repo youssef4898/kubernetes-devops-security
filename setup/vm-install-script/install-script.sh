@@ -80,4 +80,4 @@ sudo systemctl start jenkins
 sudo usermod -a -G docker jenkins
 echo "jenkins ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
-echo ".........----------------##############._.-.--.-._.#################----------------........."
+echo ".........----------------##############._.-.cccccccccc--.-._.#################----------------........."
