@@ -7,8 +7,8 @@ pipeline {
               sh "mvn clean package -DskipTests=true"
               archive 'target/*.jar' 
             }
-<<<<<<< HEAD
-        } 
+
+        } /*
       stage('Unit tests') {
             steps {
               sh "mvn test"
@@ -38,7 +38,7 @@ pipeline {
       sh 'docker push youssef1998/youssefrepo: madtekimage'
       }
 >>>>>>> e003f5045f91d06aa6aaa602a4da8b7d81cc3245
-    }
+    }*/
   }           
     
 }
