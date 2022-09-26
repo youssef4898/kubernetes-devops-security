@@ -19,8 +19,8 @@ pipeline {
     stage( 'Docker Build and Push') {
       steps {
       sh 'printenv' 
-      sh 'docker build -t youssef1998/youssefrepo: **$GIT_COMMIT' 
-      sh 'docker push youssef1998/youssefrepo: **$GIT COMMIT'
+      sh 'docker build -t youssef1998/youssefrepo: madtekimage' 
+      sh 'docker push youssef1998/youssefrepo: madtekimage'
       }
     }
   }           
