@@ -16,27 +16,12 @@ pipeline {
      }
     stage('Docker Build and Push') {
        steps {
-         withDockerRegistry([credentialsId: "docker-hub", url: ""]) {
-        sh 'printenv'
-           sh 'sudo docker build -t siddharth67/numeric-app:""$GIT_COMMIT"" .'
-           sh 'docker push siddharth67/numeric-app:""$GIT_COMMIT""'
-         }
+         sh 'echo "hello" '
        }
      }
     stage('K8S Deployment - DEV') {
        steps {
-         parallel(
-          "Deployment": {
-           withKubeConfig([credentialsId: 'kubeconfig']) {
-              sh "bash k8s-deployment.sh"
-            }
-           },
-           "Rollout Status": {
-            withKubeConfig([credentialsId: 'kubeconfig']) {
-               sh "bash k8s-deployment-rollout-status.sh"
-             }
-          }
-         )
+         sh 'echo "hello" '
        }
     }
   }           
