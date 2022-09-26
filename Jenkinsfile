@@ -19,7 +19,7 @@ pipeline {
     stage( 'Docker Build and Push') {
       steps {
       sh 'printenv' 
-      sh 'docker build -t youssef1998/youssefrepo: madtekimage' 
+      sh 'docker build -t  madtekimage' 
       sh 'docker push youssef1998/youssefrepo: madtekimage'
       }
     }
